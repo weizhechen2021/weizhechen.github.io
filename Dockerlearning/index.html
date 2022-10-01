@@ -1,0 +1,568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.4">
+    
+    
+      
+        <title>Docker - Weizhe's WIKI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.80dcb947.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uniq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Weizhe&#39;s WIKI" class="md-header__button md-logo" aria-label="Weizhe's WIKI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Weizhe's WIKI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Weizhe&#39;s WIKI" class="md-nav__button md-logo" aria-label="Weizhe's WIKI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Weizhe's WIKI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Bioinformatics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bioinformatics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Bioinformatics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gitlearning/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Docker
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vimlearning/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Markdownlearning/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><strong>DOCKER运行</strong>
+- docker info
+    - 可以知道images、version、running、paused、stopped
+- docker 
+打开Terminal，不用重新从镜像创建容器（本来就创建了）
+如果输入命令的时候出现：</p>
+<pre><code>#命令如docker info 或者docker load
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.37/info: dial unix /var/run/docker.sock: connect: permission denied
+
+#输入下列命令解决
+sudo gpasswd -a username docker
+newgrp docker  #更新docker组
+
+</code></pre>
+<p>运行Docker：</p>
+<pre><code>docker exec -it bioinfo_tsinghua bash #容器的使用
+exit #退出回到Terminal
+</code></pre>
+<p>Docker里面有什么东西：
+alter-spl
+chip-seq
+gsea
+linux
+plot
+software
+blast
+diff-exp
+homer
+mapping
+share</p>
+<p><strong>一些问题</strong>
+head file 和 cat file | head 有什么区别？
+sed和awk是不是只是控制输出道终端的时候我看到的样子，并不会更改文件的内容？</p>
+<p><strong>一些小点</strong>
+- "<code>|</code>"是管道命令操作符，它可以将左边命令传出的正确输出信息（standard output）作为右边命令的标准输入（standard input）。</p>
+<p><strong>在2.2中常用的命令+用法：</strong>
+<code>cut</code>取出文件中的特定列或字符，默认分隔符是\t
+- <code>cat file_name | cut -f 1,2,3 | head</code> 提取文件1，2，3列
+- <code>cut -f 1,2,3 file_name</code>  提取文件1，2，3列</p>
+<p><code>sort</code>排序
+- <code>sort -n</code>
+<code>uniq</code>去重复
+- <code>uniq -c</code>
+<code>chmod</code>修改文件的访问权限</p>
+<p><code>head</code>  前10行
+- <code>head -n</code>  前n行；；’、
+<code>tail</code>  后10行
+- <code>tail</code> 后10行</p>
+<p><code>ls</code> 输出当前目录
+- <code>ls -lh</code> file_name 显示要查看文件大小</p>
+<p><code>cat</code>直接查看文件
+- <code>cat file_name | head</code> 显示文件前10行
+- <code>cat file_name | tail</code>  显示文件后10行
+- <code>cat file_name | head -n</code> 显示文件前n行</p>
+<p><code>grep</code>文件中关键词搜索，返回行
+- <code>grep "字符串" file_name</code> 提取关键词所在行
+- <code>grep -v "字符串" file_name</code> 提取无关键词所在行
+- <code>grep -v '^$'</code> 排除无意义的空白行，提取其它
+- <code>grep exon file_name</code> 提取出现”exon“的行（但是awk $3== ”exon“ 会更准确， 确认筛选出的是feature == exon， 而不是其它位置出现exon也输出）
+- <code>grep -v "#" file_name | wc -l</code>排除comment line(以#开头的部分)，计算其它行数
+- <code>grep -v '^#' file_name | head -n</code> 排除comment line(以#开头的部分)，显示其它前n行
+- <code>grep -v "#" file_name | grep -v '^$' | wc -l</code>排除comment line(以#开头的部分)和无意义的空白行，计算行数
+- <code>grep -v '^#' file_name |awk '{print $3}'| sort | uniq -c</code> 计数有多少类feature 
+- <code>?????grep -v '^#' file_name |awk '{print $3}'| sort | uniq</code>  </p>
+<h1 id="uniq">试一下最后一个命令，uniq的用法</h1>
+<p><code>wc</code>查看文件行数、字数
+- <code>wc -l</code> file_name 输出文件行数</p>
+<p><code>awk</code>过滤筛选，默认分隔符为“ ”和 \t
+- <code>awk '{ xxxx }'</code>awk使用格式
+- <code>cat file_name | awk '{ print $1, $2, $3 }' | head</code>把文件内容按分隔符分列，筛选出1、2、3列，显示前面结果
+- <code>awk '{if($0!=" ") print}' file_name | head</code>  过滤空行，显示前面结果
+- <code>cat file_name | awk '$3 =="gene" { print $1, $3, $9 } ' | head</code> 提取第三列为gene的行，并只显示1，3，9列信息
+- <code>cat file_name | awk ' { print $3, $5-$4 + 1 } ' | head</code>
+- <code>cat file_name | awk '$3 =="gene" { len=$5-$4 + 1; size += len; print "Size:", size } ' | tail -n 1</code>计算所有gene总长度
+- <code>cat file_name | awk '$3 =="CDS" { len=$5-$4 + 1; size += len; print "Size:", size } ' | tail -n 1</code> 计算所有CDS总长度
+- <code>awk 'BEGIN {s = 0;line = 0 } ;$3 =="CDS" &amp;&amp; $1 =="I" { s += ($5 - $4);line += 1}; END {print "mean=" s/line}' file_name</code> 计算1号染色体CDS平均长度
+- 
+综合使用：
+- <code>cat file_name | awk '$3 == "gene"{split($10,x,";");name = x[1];gsub("\"", "", name);print name,$5-$4+1}' | head</code>
+- <code>grep exon file_name | awk '{print $5-$4+1}' | sort -n | tail -3 &gt; new_file_name</code><br />
+- <code>less new_file_name.txt</code> 查看 new_file_name.txt</p>
+<p><code>&gt;  file1</code> 如果file1本身存在 新输入会覆盖原file1
+<code>&gt;&gt;  file1</code> 如果file1本身存在 新输入会追加到原file1</p>
+<h1 id="tail-n-1">为什么要tail -n 1</h1>
+<h1 id="awk-file_name">是否可以awk file_name</h1>
+<p>2.2 章学习内容：**
+- 查看文件基本信息
+- 数据提取
+    - 筛选特定列
+        - <code>cat file_name | awk '{ print $1, $2, $3}'</code>
+        - <code>cut -f 1,2,3 file_name</code>
+        - <code>cat file_name | cut -f 1,2,3</code>
+    - 筛选特定行
+        - <code>cat file_name | awk $3 =="gene" '{print $1-$3}'</code>
+- 提取计算特定feature
+    - 提取并统计feature类型
+        - <code>grep -v '^#' file_name | awk '{ print $3 }' | sort | uniq -c</code>
+    - 计算特定feature长度
+        - 
+    - 分离并提取基因名字
+- 提取数据并存入新文件
+    - 命令处理数据 &gt; 写入文件名 （若无 新建，若有 覆盖，&gt;&gt;追加不覆盖）
+        - <code>grep exon 1.gtf  &gt; 1.txt</code>
+    - 查看文件 
+        - <code>less file_name</code>
+        - <code>q</code> 退出
+        - <code>vi file_name</code>
+        - <code>:q</code> 退出
+    - 寻找长度最长的3个exon, 汇报其长度
+        - way1
+            -  <code>grep exon 1.gtf | awk '{print $5-$4+1}' | sort -n | tail -3 &gt; 1.txt</code>
+        - way2-vim
+            - ![[Vim.png]]</p>
+<p><strong>作业</strong>
+-   1. 解释1.gtf文件中第4、5列代表什么，exon长度应该是$5-$4+1还是$5-$4？
+    - $5-$4+1
+-   2. 列出1.gtf文件中 XI 号染色体上的后 10 个 CDS （按照每个CDS终止位置的基因组坐标进行sort）。
+    - <code>cat 1.gtf | awk '$3=="CDS"' | sort -k 5 -n | tail 
+-   3. 统计 IV 号染色体上各类 feature （1.gtf文件的第3列，有些注释文件中还应同时考虑第2列） 的数目，并按升序排列。
+    -</code>grep -v "^#" 1.gtf | awk '{print $3}' | sort -n | uniq -c sort -n`
+-   提交word/md/txt/sh文件均可，第2，3题要求给出结果，并附上使用的命令</p>
+<p>sed</p>
+<pre><code>grep -v &quot;#&quot; 1.gtf | grep -v '^$' | wc -l #用grep -v排除comment line(以#开头的部分)以及无意义的空白行
+
+grep -v '^#' 1.gtf |head -10 #过滤开头注释行comment line(以#开头的部分)并显示前10行
+
+awk '{if($0!=&quot; &quot;) print}' 1.gtf | head -10 #过滤空行，显示前十行结果。
+
+sed -i &quot;s/被替换字符串/替换成字符串/a&quot; file_name
+sed -i &quot;2a 插入的字符&quot; file_name
+sed '2,5s/原字符串/替换字符串/g' #替换2到5行
+
+sed '/^$/d' file#删除空白行：
+sed '2d' file #删除文件的第2行：
+sed '2,$d' file #删除文件的第2行到末尾所有行：
+sed '$d' file #删除文件最后一行：
+sed '/^abc/'d file #删除文件中所有开头是test的行：
+
+^表示空
+$表示 一直到
+$1 表示第一列
+
+</code></pre>
+<p><a href="https://www.cnblogs.com/callmelx/p/11049669.html">docker随笔7--常用的shell命令sed与awk - callmelx - 博客园 (cnblogs.com)</a></p>
+<p>cat和grep 是用于提取文件的，sed 是编辑文件，awk类似于筛选</p>
+<p>sort
+uniq -c 去重复计数</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Gitlearning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Git" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Git
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Vimlearning/" class="md-footer__link md-footer__link--next" aria-label="Next: Vim" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Vim
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
