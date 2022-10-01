@@ -1,0 +1,13 @@
+site_name: Weizhe's WIKI
+theme:
+  name: material
+
+nav: 
+- Home: index.md
+- Bioinformatics: 
+    - Git: Gitlearning.md
+    - Docker: Dockerlearning.md
+    - Vim: Vimlearning.md
+    - Markdown: Markdownlearning.md
+- About: about.md
+
